@@ -63,7 +63,29 @@ async function getVideogamesDbName(name) {
     return videogameDbName
 };
 
+async function getVideogamesDbId(id) {
+    const videogameByPk = await Videogame.findByPk(id, {
+        include: {
+            model: Genre
+        }
+    })
+    return videogameByPk
+};
 
-console.log(getVideogamesApi())
+async function postVideogame({ name, description, releaseDate, rating, platforms, genre }) {
+    const newVideogame = await Videogame.create({ name, description, releaseDate, rating, platforms }) 
+    const genreDb = await Genre.findAll({
+        where: {
+            name: genre
+        }
+    })
+    await newVideogame.addGenre(genreDb)
+    return newVideogame
+};
+
+
+
+
+// console.log(getVideogamesApi())
 // console.log(getVideogamesApiName("halo"))
 // console.log(getVideogamesApiId(339268))
