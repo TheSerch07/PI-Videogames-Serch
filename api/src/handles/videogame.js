@@ -12,6 +12,7 @@ const getVideogames = async (req, res, next) => {
         } else {
             videogameDb = await getVideogamesDb()
             videogameApi = await getVideogamesApi()
+            console.log(videogameApi.length, "leng")
             return res.status(200).json([...videogameDb, ...videogameApi])
         }
     } catch(err) {

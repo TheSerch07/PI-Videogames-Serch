@@ -7,7 +7,10 @@ function videogameInfo(data) {
         id: data.id,
         name: data.name,
         image: data.background_image,
-        genre: data.genres.map((genre) => genre.name),
+        genres: data.genres.map((genre) => {
+            return {
+                name : genre.name}
+            }),
         releaseDate: data.released,
         rating: data.rating,
         platforms: data.platforms.map((platform) => platform.platform.name)
@@ -15,12 +18,16 @@ function videogameInfo(data) {
 };
 
 async function getVideogamesApi() {
+    let page = 1
     let arrayGames = []
-    const info = await axios("https://api.rawg.io/api/games?key=22b7d9c1190846e38e66003610885078")
+    while (page < 6) {
+        const info = await axios("https://api.rawg.io/api/games?key=22b7d9c1190846e38e66003610885078&page=" + page)
+        info.data.results.forEach((game) => {
+            arrayGames.push(videogameInfo(game))
+        })
+        page++
+    }
     // console.log(info.data.results)
-    info.data.results.forEach((game) => {
-        arrayGames.push(videogameInfo(game))
-    })
     console.log(arrayGames)
     return arrayGames
 };
