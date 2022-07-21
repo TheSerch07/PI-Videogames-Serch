@@ -36,7 +36,7 @@ async function getVideogamesApiName(name) {
 };
 
 async function getVideogamesApiId(id) {
-    const infoForId = await axios("https://api.rawg.io/api/games/"+ id + "?key=22b7d9c1190846e38e66003610885078")
+    const infoForId = await axios("https://api.rawg.io/api/games/" + id + "?key=22b7d9c1190846e38e66003610885078")
     console.log(videogameInfo(infoForId.data), "añañay")
     return videogameInfo(infoForId.data)
 };
@@ -83,9 +83,35 @@ async function postVideogame({ name, description, releaseDate, rating, platforms
     return newVideogame
 };
 
+async function getGenres() {
+    const genresInDb = await Genre.findAll()
+    if (genresInDb.length < 1) {
+        const genresApi = await axios("https://api.rawg.io/api/genres?key=22b7d9c1190846e38e66003610885078")
+        const genresArray = genresApi.data.results.map((genre) => {
+            return {
+                name: genre.name
+            }
+        })
+        await Genre.bulkCreate(genresArray)
+    }
+}
 
-
-
+async function getGenresDb() {
+    let genreDb = await Genre.findAll()
+    return genreDb
+}
 // console.log(getVideogamesApi())
 // console.log(getVideogamesApiName("halo"))
 // console.log(getVideogamesApiId(339268))
+
+module.exports = {
+    getVideogamesApi,
+    getVideogamesApiName,
+    getVideogamesApiId,
+    getVideogamesDb,
+    getVideogamesDbName,
+    getVideogamesDbId,
+    postVideogame,
+    getGenres,
+    getGenresDb
+}
