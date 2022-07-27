@@ -24,6 +24,9 @@ export default function SearchBar() {
                 <input id="submit" type="text" placeholder="Name Videogame" onChange={onInputChange}/>
                 <input type="submit" value="Search Videogame!" />
             </form>
+            <Link to="/videogame">
+                <button>Create A Videogame!</button>
+            </Link>
         </div>
     )
 }
