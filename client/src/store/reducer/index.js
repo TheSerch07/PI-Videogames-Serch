@@ -1,10 +1,11 @@
 import { ASC, MIN } from "../../components/Order";
-import { FETCH_GENRES, FETCH_VIDEOGAMES, FETCH_VIDEOGAMES_NAME, FILTERED_VIDEOGAMES_GENRE, FILTERED_VIDEOGAMES_ORIGIN, ORDER_VIDEOGAMES, ORDER_VIDEOGAMES_RATING, POST_VIDEOGAME } from "../actions";
+import { FETCH_GENRES, FETCH_VIDEOGAMES, FETCH_VIDEOGAMES_DETAIL, FETCH_VIDEOGAMES_NAME, FILTERED_VIDEOGAMES_GENRE, FILTERED_VIDEOGAMES_ORIGIN, ORDER_VIDEOGAMES, ORDER_VIDEOGAMES_RATING, POST_VIDEOGAME } from "../actions";
 
 const initialState = {
     videoGames: [],
     filteredVideogames: [],
-    genres: []
+    genres: [],
+    detail: []
 }
 
 export default function reducer (state = initialState, action) {
@@ -24,6 +25,11 @@ export default function reducer (state = initialState, action) {
             return {
                 ...state,
                 genres: action.payload
+            }
+        case FETCH_VIDEOGAMES_DETAIL: 
+            return {
+                ...state,
+                detail: action.payload
             }
         case ORDER_VIDEOGAMES: 
             let orderVideogames = [...state.filteredVideogames]

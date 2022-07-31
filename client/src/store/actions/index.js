@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const FETCH_VIDEOGAMES = "@videogames/fetch_videogames";
 export const FETCH_VIDEOGAMES_NAME = "@videogames/fetch_videogames_name"
+export const FETCH_VIDEOGAMES_DETAIL = "@videogames/fetch_videogames_detail"
 export const FETCH_GENRES = "@videogames/fetch_genres"
 export const ORDER_VIDEOGAMES = "@videogames/order_alp"
 export const ORDER_VIDEOGAMES_RATING = "@videogames/order_rating"
@@ -28,6 +29,19 @@ export function fetchVideogamesName(name) {
         .then((videogame) => {
             dispatch({
                 type: FETCH_VIDEOGAMES_NAME,
+                payload: videogame.data
+            })
+        })
+        .catch((err) => console.log(err))
+    }
+}
+
+export function fetchVideogamesDetail(id) {
+    return function(dispatch) {
+        axios.get("http://localhost:3001/videogames/" + id)
+        .then((videogame) => {
+            dispatch({
+                type: FETCH_VIDEOGAMES_DETAIL,
                 payload: videogame.data
             })
         })
