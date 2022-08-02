@@ -10,6 +10,9 @@ function App() {
     <BrowserRouter>
     <div className="App">
       <Switch>
+        <Route path="/home/:id">
+          <Detail />
+        </Route>
         <Route exact path="/">
           <Landing />
         </Route>
@@ -18,9 +21,6 @@ function App() {
         </Route>
         <Route path="/videogame">
           <CreateVideogame />
-        </Route>
-        <Route path="/home/:id">
-          <Detail />
         </Route>
       </Switch>
     </div>
