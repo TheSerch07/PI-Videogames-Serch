@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { fetchVideogamesDetail } from "../store/actions"
+import { cleanDetail, fetchVideogamesDetail } from "../store/actions"
+import Loading from "./Loading";
 
 export default function Detail() {
     let { id } = useParams()
@@ -10,6 +11,8 @@ export default function Detail() {
     
     useEffect(() => {
         dispatch(fetchVideogamesDetail(id))
+
+        return dispatch(cleanDetail())
     }, [dispatch])
     
     let detailVideogame = useSelector((state) => state.detail)
@@ -36,7 +39,7 @@ export default function Detail() {
             <h2>{detailVideogame.rating}</h2>
             <h2>{detailVideogame.platforms}</h2>
             </div>: 
-            <div>a</div>
+            <div><Loading/></div>
         }
         </div>
     )

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchVideogames } from "../store/actions";
 import Videogame from "./Videogame.jsx";
 import Pagination from "./Pagination";
+import Loading from "./Loading";
 
 export default function Videogames() {
     let videogames = useSelector((state) => state.filteredVideogames)
@@ -24,9 +25,12 @@ export default function Videogames() {
     console.log(videogames, "a?")
     return (
         <div>
-            {currentVideogames.map((videogame) => {
-                return <Videogame key={videogame.id} name={videogame.name} image={videogame.image} genres={videogame.genres} />
-            })}
+            {
+            currentVideogames.length > 0 ?
+            currentVideogames.map((videogame) => {
+                return <Videogame key={videogame.id} id={videogame.id} name={videogame.name} image={videogame.image} genres={videogame.genres} />
+            }) : <Loading/>
+        }
             <Pagination videogamesPerPage={videogamePerPage} videogames={videogames.length} pagination={pagination} />
         </div>
     )

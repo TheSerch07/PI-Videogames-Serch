@@ -1,0 +1,63 @@
+.container {
+    min-width: 100%;
+    /* background-image: url("https://hullwhatson.com/wp-content/uploads/2020/04/Gaming-Video-Games-Relax-De-Stress.jpg"); */
+}
+
+.logo {
+    /* min-width: 100rem; */
+    position: relative;
+    left: -478px;
+    /* border: solid 20px; */
+    max-width: 5rem;
+    border-radius: 30%;
+}
+
+.text {
+    width: 50rem;
+    justify-content: right;
+    font-size: 70px;
+    padding: 1.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    border: 20px;
+    border-radius: 10px;
+    border-color: blueviolet;
+    margin-left: 0;
+    margin: 50px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    color: antiquewhite;
+}
+
+.textH6 {
+    color: antiquewhite;
+    font-size: 1.3rem;
+    width: 50rem;
+    padding-top: 5rem;
+    padding-left: 5rem;
+    border-top: 20px;
+    /* border: 20px; */
+}
+
+.button {
+    color: rgb(247, 105, 252);
+    background: rgb(57, 15, 68);
+    position: absolute;
+    border-radius: 7rem;
+    border-color: aliceblue;
+    width: 20rem;
+    height: 13rem;
+    font-size: 3.5rem;
+    font-weight: 999;
+    margin-top: -5rem;
+    margin-left: 200px;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    box-shadow: 3rem 3rem 3rem #340144, -3rem -3rem -3rem white;
+}
+
+.button:hover {
+    color: rgb(57, 15, 68);
+    background-color: rgb(247, 105, 252);
+    box-shadow: none;
+}

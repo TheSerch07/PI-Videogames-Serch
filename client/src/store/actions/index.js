@@ -9,6 +9,7 @@ export const ORDER_VIDEOGAMES_RATING = "@videogames/order_rating"
 export const FILTERED_VIDEOGAMES_GENRE = "@videogames/filtered_genre"
 export const FILTERED_VIDEOGAMES_ORIGIN = "@videogames/filtered_origin"
 export const POST_VIDEOGAME = "@videogames/post_videogame"
+export const CLEAN_STATE = "@videogames/clean"
 
 export function fetchVideogames() {
     return function(dispatch) {
@@ -95,5 +96,10 @@ export function postVideogame(videogame) {
         .then(() => {
         })
         .catch((err) => console.log(err))
+    }
+}
+export function cleanDetail() {
+    return {
+        type: CLEAN_STATE
     }
 }

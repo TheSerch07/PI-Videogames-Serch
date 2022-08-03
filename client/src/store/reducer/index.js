@@ -1,5 +1,5 @@
 import { ASC, MIN } from "../../components/Order";
-import { FETCH_GENRES, FETCH_VIDEOGAMES, FETCH_VIDEOGAMES_DETAIL, FETCH_VIDEOGAMES_NAME, FILTERED_VIDEOGAMES_GENRE, FILTERED_VIDEOGAMES_ORIGIN, ORDER_VIDEOGAMES, ORDER_VIDEOGAMES_RATING, POST_VIDEOGAME } from "../actions";
+import { CLEAN_STATE, FETCH_GENRES, FETCH_VIDEOGAMES, FETCH_VIDEOGAMES_DETAIL, FETCH_VIDEOGAMES_NAME, FILTERED_VIDEOGAMES_GENRE, FILTERED_VIDEOGAMES_ORIGIN, ORDER_VIDEOGAMES, ORDER_VIDEOGAMES_RATING, POST_VIDEOGAME } from "../actions";
 
 const initialState = {
     videoGames: [],
@@ -79,6 +79,11 @@ export default function reducer (state = initialState, action) {
         case POST_VIDEOGAME:
             return {
                 ...state
+            }
+        case CLEAN_STATE:
+            return {
+                ...state,
+                detail: []
             }
         default: 
             return {

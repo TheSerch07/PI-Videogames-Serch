@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchVideogamesName } from "../store/actions"
+import styles from "../styles/SearchBar.module.css"
 
 export default function SearchBar() {
     const [search, setSearch] = useState("")
@@ -19,14 +20,14 @@ export default function SearchBar() {
     }
 
     return (
-        <div>
-            <form onSubmit={onSubmit}>
-                <input id="submit" type="text" placeholder="Name Videogame" onChange={onInputChange}/>
-                <input type="submit" value="Search Videogame!" />
-            </form>
+        <div className={styles.container}>
             <Link to="/videogame">
-                <button>Create A Videogame!</button>
+                <button className={styles.buttonCreate}>Create A Videogame!</button>
             </Link>
+            <form className={styles.form} onSubmit={onSubmit}>
+                <input className={styles.input} id="submit" type="text" placeholder="Name Videogame" onChange={onInputChange}/>
+                <input className={styles.buttonSubmit} type="submit" value="Search Videogame!" />
+            </form>
         </div>
     )
 }

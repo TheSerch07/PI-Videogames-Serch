@@ -1,0 +1,47 @@
+.container {
+    padding-left: 50px;
+    display: flex;
+    /* align-self: center; */
+    /* align-content: center; */
+    align-items: center;
+    color: aliceblue;
+}
+
+.select {
+    background: rgb(68, 159, 212);
+    color: rgb(117, 44, 99);
+    text-align: center;
+    height: 2.7rem;
+    width: 4rem;
+    /* padding-top: -2px; */
+    font-size: 1rem;
+    border-radius: 6rem;
+    border-color: aliceblue;
+    font-weight: 900;
+    font-family: 'Righteous', cursive;
+    cursor: pointer;
+    -webkit-text-stroke: 0.05px rgb(7, 7, 7);
+    box-shadow: inset 6px 6px 6px #2a3679, inset -6px -6px 6px rgb(41, 35, 122);
+}
+
+.buttonReload {
+    background: rgb(212, 68, 200);
+    color: rgb(70, 44, 117);
+    /* margin-right: 10rem; */
+    margin-left: 10rem;
+    height: 5rem;
+    width: 12rem;
+    font-size: 1.2rem;
+    border-radius: 6rem;
+    border-color: aliceblue;
+    font-weight: 900;
+    font-family: 'Righteous', cursive;
+    cursor: pointer;
+    -webkit-text-stroke: 0.25px rgb(255, 255, 255);
+    box-shadow: inset 6px 6px 6px #622a79, inset -6px -6px 6px rgb(95, 35, 122);
+}
+
+.buttonReload:hover {
+    background: rgb(70, 44, 117);
+    color: rgb(212, 68, 200);
+}

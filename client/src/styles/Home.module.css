@@ -1,0 +1,8 @@
+.text {
+    font-size: 5rem;
+    font-weight: 900;
+    font-family: 'Righteous', cursive;
+    color: rgb(212, 68, 200);
+    border-color: aliceblue;
+    -webkit-text-stroke: 2px black;
+}

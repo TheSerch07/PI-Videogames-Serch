@@ -1,8 +1,12 @@
-export default function Videogame( { name, image, genres } ) {
+import { Link } from "react-router-dom"
+
+export default function Videogame( { id, name, image, genres } ) {
     return (
         <div>
-            <h1>{name}</h1>
-            <img src={image} alt="videogameImage"/>
+            <Link to={`/home/${id}`}>
+                <h1>{name}</h1>
+            </Link>
+            {image?<img src={image} alt="videogameImage"/>:<img src="https://img.unocero.com/2021/11/Videojuegos-fuentes-de-informacion-gamers-.jpg" alt="videogameImage" /> }
             <h2>{genres.map((genre) => {
                 return genre.name
                 })}</h2>

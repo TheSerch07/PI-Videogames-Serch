@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+}
+
+.buttonCreate {
+    background: rgb(212, 68, 200);
+    color: rgb(70, 44, 117);
+    margin-right: 10rem;
+    /* margin-left: -20rem; */
+    height: 5rem;
+    width: 12rem;
+    font-size: 1.2rem;
+    border-radius: 6rem;
+    border-color: aliceblue;
+    font-weight: 900;
+    font-family: 'Righteous', cursive;
+    cursor: pointer;
+    -webkit-text-stroke: 0.25px rgb(255, 255, 255);
+    box-shadow: inset 6px 6px 6px #622a79, inset -6px -6px 6px rgb(95, 35, 122);
+}
+
+.buttonCreate:hover {
+    color: rgb(212, 68, 200);
+    background: rgb(70, 44, 117);
+}
+
+.input {
+    background: #ecf0f3;
+    padding: 15px;
+    font-size: 14px;
+    font-family: 'Righteous', cursive;
+    border-top: 20px;
+    height: 15px;
+    border-top: -20rem;
+    border-bottom: -20rem;
+    border-radius: 2rem;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+.buttonSubmit {
+    background: rgb(212, 68, 200);
+    color: rgb(70, 44, 117);
+    /* margin-right: 10rem;
+    margin-left: -20rem; */
+    height: 2.7rem;
+    width: 11rem;
+    font-size: 1rem;
+    border-radius: 6rem;
+    border-color: aliceblue;
+    font-weight: 900;
+    font-family: 'Righteous', cursive;
+    cursor: pointer;
+    -webkit-text-stroke: 0.05px rgb(255, 255, 255);
+    box-shadow: inset 6px 6px 6px #622a79, inset -6px -6px 6px rgb(95, 35, 122);
+}
+
+.buttonSubmit:hover {
+    background: rgb(70, 44, 117);
+    color: rgb(212, 68, 200);
+}
+
+.form {
+    /* align-content: center; */
+    align-self: center;
+}

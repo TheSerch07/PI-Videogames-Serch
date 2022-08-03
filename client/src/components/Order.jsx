@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux"
 import { fetchVideogames, filteredVideogamesCreated, filteredVideogamesGenre, orderVideogames, orderVideogamesRating } from "../store/actions"
+import styles from "../styles/Order.module.css"
 
 export const ASC = "A-Z"
 export const DES = "Z-A"
@@ -30,17 +31,16 @@ export default function Order() {
     }
 
     return (
-        <div>
-            <button onClick={reloadVideogames}>Reload Videogames!</button>
-            <select name="orderAlp" onChange={onSelectAlpChange}>
+        <div className={styles.container}>
+            <select className={styles.select} name="orderAlp" onChange={onSelectAlpChange}>
                 <option value={ASC}>A-Z</option>
                 <option value={DES}>Z-A</option>
             </select>
-            <select name="orderRat" onChange={onSelectRatingChange}>
+            <select className={styles.select} name="orderRat" onChange={onSelectRatingChange}>
                 <option value={MIN}>Min</option>
                 <option value={MAX}>Max</option>
             </select>
-            <select name="filterGenre" onChange={onSelectGenreChange}>
+            <select className={styles.select} name="filterGenre" onChange={onSelectGenreChange}>
                 <option value="All">All</option>
                 <option value="Action">Action</option>
                 <option value="Indie">Indie</option>
@@ -62,11 +62,12 @@ export default function Order() {
                 <option value="Educational">Educational</option>
                 <option value="Card">Card</option>
             </select>
-            <select name="filterOrigin" onChange={onSelectOriginChange}>
+            <select className={styles.select} name="filterOrigin" onChange={onSelectOriginChange}>
                 <option value="All">All</option>
                 <option value="API">API</option>
                 <option value="DataBase">DataBase</option>
             </select>
+            <button className={styles.buttonReload} onClick={reloadVideogames}>Reload Videogames!</button>
         </div>
     )
 }
